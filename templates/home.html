@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hit Track Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hit Track Analyzer</h1>
+
+        <form action="/predict" method="post">
+
+            <label>Duration (ms):</label>
+            <input type="text" name="duration_ms" required>
+ 
+            <label>Explicit (0 or 1):</label>
+            <input type="text" name="explicit" required>
+
+            <label>Danceability (0-1):</label>
+            <input type="text" name="danceability" required>
+            
+            <label>Energy (0-1):</label>
+            <input type="text" name="energy" required>
+
+            <label>Loudness (dB):</label>
+            <input type="text" name="loudness" required>
+
+            <label>Speechiness (0-1):</label>
+            <input type="text" name="speechiness" required>
+
+            <label>Acousticness (0-1):</label>
+            <input type="text" name="acousticness" required>
+
+            <label>Instrumentalness (0-1):</label>
+            <input type="text" name="instrumentalness" required>
+
+            <label>Liveness (0-1):</label>
+            <input type="text" name="liveness" required>
+
+            <label>Valence (0-1):</label>
+            <input type="text" name="valence" required>
+
+            <label>Tempo (BPM):</label>
+            <input type="text" name="tempo" required>
+
+            <label>Track Genre:</label>
+            <select name="track_genre" required>
+                <option value="" disabled selected>Select Track Genre</option>
+                {% for track in [
+                    'acoustic', 'afrobeat', 'alt-rock', 'alternative', 'ambient',
+                    'anime', 'black-metal', 'bluegrass', 'blues', 'brazil',
+                    'breakbeat', 'british', 'cantopop', 'chicago-house', 'children',
+                    'chill', 'classical', 'club', 'comedy', 'country', 'dance',
+                    'dancehall', 'death-metal', 'deep-house', 'detroit-techno',
+                    'disco', 'disney', 'drum-and-bass', 'dub', 'dubstep', 'edm',
+                    'electro', 'electronic', 'emo', 'folk', 'forro', 'french', 'funk',
+                    'garage', 'german', 'gospel', 'goth', 'grindcore', 'groove',
+                    'grunge', 'guitar', 'happy', 'hard-rock', 'hardcore', 'hardstyle',
+                    'heavy-metal', 'hip-hop', 'honky-tonk', 'house', 'idm', 'indian',
+                    'indie-pop', 'indie', 'industrial', 'iranian', 'j-dance', 'j-idol',
+                    'j-pop', 'j-rock', 'jazz', 'k-pop', 'kids', 'latin', 'latino',
+                    'malay', 'mandopop', 'metal', 'metalcore', 'minimal-techno', 'mpb',
+                    'new-age', 'opera', 'pagode', 'party', 'piano', 'pop-film', 'pop',
+                    'power-pop', 'progressive-house', 'psych-rock', 'punk-rock',
+                    'punk', 'r-n-b', 'reggae', 'reggaeton', 'rock-n-roll', 'rock',
+                    'rockabilly', 'romance', 'sad', 'salsa', 'samba', 'sertanejo',
+                    'show-tunes', 'singer-songwriter', 'ska', 'sleep', 'songwriter',
+                    'soul', 'spanish', 'study', 'swedish', 'synth-pop', 'tango',
+                    'techno', 'trance', 'trip-hop', 'turkish', 'world-music'
+                ] %}
+                <option value="{{ track }}">{{ track }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Album Name:</label>
+            <input type="text" name="album_name" required>
+
+            <label>Artist Name:</label>
+            <input type="text" name="artists" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

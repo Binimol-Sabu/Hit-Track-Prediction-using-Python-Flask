@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/res.css') }}">
+</head>
+<body background="{{ url_for('static', filename='/spoty.jpg') }}">
+    <div class="container">
+        <h2>Prediction Result</h2>
+        <div class="result-box">
+            <p><strong>{{ result }}</strong></p>
+        </div>
+        <a href="/" class="button">Try Again</a>
+    </div>
+</body>
+</html>
