@@ -20,9 +20,6 @@ The dataset contains:
 - Valence
 - Popularity (target variable, 0-100)
 
-Source: [Spotify Web API](https://developer.spotify.com/documentation/web-api/)
+Source: [[Spotify Web API](https://developer.spotify.com/documentation/web-api/)](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset)
 
-## How to Use
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Binimol-Sabu/Hit-Track-Prediction-using-Python-Flask.git
+
